@@ -8,10 +8,7 @@ const kcisa = require('./kcisa');
 
 // CORS 설정
 app.use(cors({
-    origin: 'https://performance-swart.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
+    origin: '*'
 }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
