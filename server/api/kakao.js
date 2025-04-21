@@ -4,7 +4,7 @@ const cors = require('cors');
 const axios = require('axios');
 const { MongoClient } = require('mongodb');
 
-const CLIENT_REDIRECT_URI = 'https://performance-swart.vercel.app/kakao/redirect';
+const CLIENT_REDIRECT_URI = 'https://test-do-w66f.vercel.app/kakao/redirect';
 
 const uri = "mongodb+srv://nsa10050:rlaehdus0823@gotoashow.9ufcsbx.mongodb.net/?retryWrites=true&w=majority&appName=gotoashow";
 const client = new MongoClient(uri);
@@ -23,16 +23,7 @@ async function dataCtrl() {
 
 dataCtrl();
 
-kakao.use(cors({
-    origin: 'https://performance-swart.vercel.app',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-}));
-
 kakao.get('/', async function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://performance-swart.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
     const { code } = req.query;
 
